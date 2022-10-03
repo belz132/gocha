@@ -1,0 +1,25 @@
+tags:
+ - name: Data Cleansing
+get:
+ description: Text Data Cleansing
+parameters:
+ - name: Text
+   in: formData
+   required: true
+   type: string
+   description: Input Some Text Here
+ - name: Operation
+   in: formData
+   required: true
+   type: array
+   description: Check the Operation You Want to Perform
+   items:
+    type: string
+    enum: [Lower Case, Remove Unnecessary Char, Remove Non-Alphanumeric Char, Normalize Alay, Remove Stopword, Stemming, All]
+responses:
+ '200':
+  description: Successful Response
+ '400':
+  description: Bad Request
+ '500':
+  description: Internal Server Error
